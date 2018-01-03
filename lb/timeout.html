@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button type="button" onclick="startWork()">开始工作</button>
+    <input type="text" id="result" />
+    <button type="button" onclick="">结束工作</button>
+    <script>
+        function startWork() {
+            var i = 0;
+            function timedCount() {
+                i++;
+                document.getElementById("result").innerHTML = Number(i);
+                setTimeout(timedCount, 500);
+            }
+
+            timedCount();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css居中布局技巧</title>
+    <style>
+        /*方法一：css3 transform*/
+        .parent{
+            position: relative;
+        }
+        .child{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /*方法二：Flex布局*/
+        .parent{
+            display: flex;
+            justify-content: center;
+            /*适用于子元素为浮动，绝对定位，内联元素，均可水平居中*/
+        }
+
+        /*居中的元素为常规文档流中的块元素（display:block）*/
+        /*方式一：设置margin*/
+        .parent{
+            width: 100%;
+        }
+        .child{
+            width: 600px;
+            height: 50px;
+            margin: 0 auto;
+            background: #999;
+        }
+
+        /*方式二：修改为inline-block属性*/
+        .parent{
+            text-align: center;
+        }
+        .child{
+            display: inline-block;
+        }
+        /*居中的元素为浮动元素*/
+        .child{
+            width: 100px;
+            float: left;
+            position: relative;
+            left: 50%;
+            margin-left: -50%;
+        }
+        /*居中的元素为绝对定位元素*/
+        /*方式一：*/
+        .parent{
+            position: relative;
+        }
+        .child{
+            position: absolute;
+            width: 100px;
+            left: 50%;
+            margin-left: -50px;
+        }
+        /*方式二：*/
+        .parent{
+            position: relative;
+        }
+        .child{
+            position: absolute;
+            width: 100px;
+            left: 0;
+            top: 0;
+            margin: 0 auto;
+        }
+
+        /*垂直居中元素*/
+        /*通用方法，元素的宽高未知*/
+        /*方式一：css3 transform*/
+        .parent{
+            position: relative;
+        }
+        .child{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child"></div>
+    </div>
+</body>
+</html>

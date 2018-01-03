@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>flex box</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        body{
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flex;
+            display: flex;
+            margin: 0 auto;
+        }
+
+        article{
+            height:500px;
+            -webkit-flex:1 0;
+            -moz-flex:1 0;
+            -ms-flex:1 0;
+            flex:1 0;
+            -webkit-transition:1s all;
+            -moz-transition:1s all;
+            -ms-transition:1s all;
+            transition:1s all;
+            overflow: hidden;
+            color: rgba(0, 0, 0, 1);
+        }
+
+        article:hover{
+            -webkit-flex:1 600px;
+            -moz-flex:1 600px;
+            -ms-flex:1 600px;
+            flex:1 600px;
+            color: rgba(0, 0, 0, 1);
+            
+        }
+    </style>
+</head>
+<body>
+<!--     <article></article>
+    <article></article>
+    <article></article>
+    <article></article>
+    <article></article>
+    <article></article> -->
+    <script type="text/javascript">
+        // for(var n = 8, i = 1;i <= n;i ++){
+        //   console.log(new Array(2 * n - 1).fill(" ").fill("*",n - i,n + i - 1).join(""));
+        // }
+        // 
+        for(var a = 0; a < 9; a++){
+            var star = "";
+            for(var b = 0; b < 8-a; b++){
+                star += " ";
+            }
+            for(var b = 0; b < a*2-1; b++){
+                star += "*";
+            }
+            console.log(star);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>how to write beauty code</title>
+</head>
+<body>
+    <script type="text/jsx">
+    //正统的React组件的写法
+        export default class RelatedSearch extends React.Component{
+            constructor(props){
+                super(props);
+                this._handleClick = this._handleClick.bind(this);
+            }
+
+            _handleClick(suggestedUrl,event){
+                event.preventDefault();
+                this.props.onclick(suggestedUrl);
+            }
+
+            render(){
+                return(
+                    <section className="related-search-container">
+                        <h1 className="related-search-title">Related Searches:</h1>
+                        <Layout x-small={2} small={3} medium={4} padded={true}>
+                            {this.props.relatedQueries.map((query,index) =>
+                                <Link className="related-search-link" onClick={(event) =>
+                                    this._handleClick(query.search,event)}
+                                    key={index}>
+                                    {query.searchText}
+                                </Link>
+                            )}
+                        </Layout>  
+                    </section>
+                )
+            }  
+        }
+
+        // 使用SFC模式
+        
+        const _handleClick(suggestedUrl,onclick,event) =>{
+            event.preventDefault();
+            onClick(suggestedUrl);
+        };
+        const RelatedSearch = ({relatedQueries,onClick}) =>
+            <section className="related-search-container">
+                <h1 className="related-search-title">Related Searches</h1>
+                <Layout x-small={2} small={3} medium={4} padded{true}>
+                    {relatedQueries.map((query,index) =>
+                        <link className="related-search-link"
+                            onClick={(event) =>
+                            _handleClick(query.searchQuery,onclick,event)}
+                            key={index}>
+                            {query.searchText}
+                        </link>
+                    )}
+                </Layout>
+            </section>
+            export default RelatedSearch;
+    </script>
+</body>
+</html>

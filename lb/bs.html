@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>图片旋转</title>
+        <style type="text/css">
+            #img{
+                border: 1px solid #000;
+                display: block;
+            }
+        </style>
+
+        <!-- <style type="text/css">
+            .item:after{
+                content: "";
+                display: block;
+                width: 12px;
+                height: 12px;
+                background-color: red;
+            }
+
+            .active:last-child:after{
+                color:blue;
+                background: yellow;
+            }
+        </style> -->
+    </head>
+    <body>
+<!--     <div id="content" style="display: none;">
+        <p>隐藏内容<p><p>隐藏内容<p>
+        <p>隐藏内容<p><p>隐藏内容<p>
+        <p>隐藏内容<p><p>隐藏内容<p>
+    </div>
+    <a href="#" id="toggle">展开</a>
+
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $("#toggle").click(function() {
+                $(this).text($("#content").is(":hidden") ? "收起" : "展开");
+                $("#content").slideToggle();
+            });
+        });
+        </script> -->
+
+        <img src="img/avatar.jpg" id="img" /> 
+        <button id="button">旋转</button>
+        <script type="text/javascript">
+            var deg = 0;
+            document.getElementById("button").onclick = function () {
+                deg += 90;
+                document.getElementById("img").style.transform = "rotate(" + deg + "deg)";
+            }
+        </script>
+    </body>
+</html>

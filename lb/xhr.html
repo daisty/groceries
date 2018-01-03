@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax</title>
+</head>
+<body>
+    <script>
+        function ajax(params) {
+            params = params || {};
+            params.data = params.data || {};
+            var json = params.jsonp ? jsonp(params) : json(params);
+
+            //ajax请求
+            function json(params) {
+                params.type = (params.type || 'GET').toUpperCase();
+                params.data = formatParams(params.data);
+                var xhr = null;
+
+                //实例化XMLHttpRequest对象
+                if(window.XMLHttpRequest) {
+                    xhr = new XMLHttpRequest();
+                } else {
+                    //IE6及其以下版本
+                    xhr = new ActiveXObject('Microsoft.XMLHTTP');
+                };
+
+                //监听事件
+                xhr.onreadystatechange = function(){
+                    if(xhr.readyState == 4) {
+                        var status = xhr.status;
+                        if(status >= 200 && status < 300) {
+                            var response = '';
+                            var type = xhr.getResponseHeader('Content-type');
+                            if(type.indexOf('xml') !== -1 && xhr.responseXML) {
+                                response = xhr.responseXML;  //Document对像响应
+                            } else if(type === 'application/json') {
+                                response = JSON.parse(xhr.readAsText); //JSON响应
+                            } else{
+                                response = xhr.responseText;  //字符串响应
+                            };
+                            params.success && params.success(response);
+                        } else {
+                            params.error && params.error(status);
+                        }
+                    }
+                };
+            }
+        }
+    </script>
+</body>
+</html>

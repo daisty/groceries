@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>preserve-3d</title>
+        <meta name="viewport" content="initial-scale=1, maximun-scale=1, user-scalable=no, width=device-width">
+        <style type="text/css">
+
+        
+            .cude {   
+
+                  width:300px;   
+
+                  height:300px;   
+
+                  position: relative;   
+
+                  margin: 100px auto;   
+
+                  transform-style: preserve-3d;   
+
+                  -webkit-transform-style: preserve-3d;   
+
+                  transform: rotateX(-30deg) rotateY(-80deg);   
+
+                  -webkit-animation: rotate 20s infinite;   
+
+                  animation-timing-function: linear;   
+
+                  transform-origin: 50% 50% 0;   
+
+                  -webkit-transform-origin: 50% 50% 0;   
+
+                }       
+
+                .surface {   
+
+                  position: absolute;   
+
+                  top: 0;   
+
+                  left: 0;   
+
+                  width: 300px;   
+
+                  height: 300px;   
+
+                  background:#666;   
+
+                  opacity: 0.8;   
+
+                  font-size:100px;   
+
+                  text-align: center;   
+
+                  line-height:300px;   
+
+                  font-weight: bold;   
+
+                  color:#fff;   
+
+                  border:1px solid #fff;   
+
+                }       
+
+                .surface img {   
+
+                  width: 100%;   
+
+                }       
+
+                .front {   
+
+                  transform: rotateY(0) translateZ(150px);   
+
+                }       
+
+                .back {   
+
+                  transform: translateZ(-150px) rotateY(180deg);   
+
+                }       
+
+                .left {   
+
+                  transform: rotateY(-90deg) translateZ(150px);   
+
+                }       
+
+                .right {   
+
+                  transform: rotateY(90deg) translateZ(150px);   
+
+                }       
+
+                .top {   
+
+                  transform: rotateX(90deg) translateZ(150px);   
+
+                }       
+
+                .bottom {   
+
+                  transform: rotateX(90deg) translateZ(-150px);   
+
+                }       
+
+/*                @-webkit-keyframes rotate {   
+
+                  from {   
+
+                    transform: rotateX(0deg) rotateY(0deg);   
+
+                  }   
+
+                  to {   
+
+                    transform: rotateX(360deg) rotateY(360deg);   
+
+                  }   
+
+                } */      
+
+                .surface-in{   
+
+                  width:150px;   
+
+                  height:150px;   
+
+                  position:absolute;   
+
+                  top:50%;   
+
+                  left:50%;   
+
+                  margin-top:-75px;   
+
+                  margin-left:-75px;   
+
+                }   
+
+                .surface-in img{   
+
+                  width:150px;   
+
+                  height:150px;   
+
+                }   
+
+                .front-in{   
+
+                  transform:rotateY(0deg) translateZ(75px);   
+
+                }   
+
+                .back-in{   
+
+                  transform:rotateY(180deg) translateZ(75px);   
+
+                }   
+
+                .left-in{   
+
+                  transform:rotateY(-90deg) translateZ(75px);   
+
+                }   
+
+                .right-in{   
+
+                  transform:rotateY(90deg) translateZ(75px);   
+
+                }   
+
+                .top-in{   
+
+                  transform:rotateX(90deg) translateZ(-75px);   
+
+                }   
+
+                .bottom-in{   
+
+                  transform:rotateX(-90deg) translateZ(-75px);   
+
+                }
+
+        </style>
+    </head>
+<!--     <div class="box">   
+      <div class="cude">   
+        //外3D立方体
+        <div class="front surface">1</div>   
+        <div class="surface left">2</div>   
+        <div class="surface right">3</div>   
+        <div class="surface bottom">4</div>
+        <div class="surface top">5</div>   
+        <div class="surface back">6</div>
+        //内3D立方体
+        <div class="surface-in front-in"><img src="bgimg/a.jpg" alt="" /></div>   
+        <div class="surface-in back-in"><img src="bgimg/b.jpg" alt="" /></div>   
+        <div class="surface-in left-in"><img src="bgimg/c.jpg" alt="" /></div>   
+        <div class="surface-in right-in"><img src="bgimg/d.jpg" alt="" /></div>   
+        <div class="surface-in top-in"><img src="bgimg/e.jpg" alt="" /></div>   
+        <div class="surface-in bottom-in"><img src="bgimg/f.jpg" alt="" /></div>   
+      </div>
+        <div class="cude">   
+        //外3D立方体
+            <div class="front surface">1</div>   
+            <div class="surface left">2</div>   
+            <div class="surface right">3</div>   
+            <div class="surface bottom">4</div>
+            <div class="surface top">5</div>   
+            <div class="surface back">6</div>
+            //内3D立方体
+            <div class="surface-in front-in"><img src="bgimg/a.jpg" alt="" /></div>   
+            <div class="surface-in back-in"><img src="bgimg/b.jpg" alt="" /></div>   
+            <div class="surface-in left-in"><img src="bgimg/c.jpg" alt="" /></div>   
+            <div class="surface-in right-in"><img src="bgimg/d.jpg" alt="" /></div>   
+            <div class="surface-in top-in"><img src="bgimg/e.jpg" alt="" /></div>   
+            <div class="surface-in bottom-in"><img src="bgimg/f.jpg" alt="" /></div>   
+          </div>   
+        </div> -->
+    <body>
+        <p><body onload="Time()"> </p>
+        <b>历时:</b><input type="text" id="duration" style="border:0px;background-color:transparent;width:80px;" />
+        <b>当前时间:</b><input type="text" id="timeshow" style="border:0px;background-color:transparent;width:80px;" />     
+    
+
+
+
+    <script type="text/javascript">  
+   /* 
+    * 显示当前时间函数 
+    * YQ 
+    */  
+    function Time()  
+    {  
+    var today=new Date();   
+    var h=today.getHours();  
+    var m=today.getMinutes();  
+    var s=today.getSeconds();  
+    duration(h,m,s);  
+    // add a zero in front of numbers<10  
+    m=checkTime(m);  
+    s=checkTime(s);  
+    document.getElementById('timeshow').value=h+":"+m+":"+s;  
+    t=setTimeout('Time()',500); //暂停0.5后执行Time()函数  
+    }  
+    /* 
+     * 个位数时补0 
+     */  
+    function checkTime(i)   
+    {  
+    if (i<10)   
+      {i="0" + i}  
+      return i  
+    }  
+    /* 
+     * 历时：当前时间-开始时间 
+     * @author YQ 
+     */  
+    function duration(nh,nm,ns){  
+        var beginTime = document.getElementById('beginTime').value; //获取计时初始值  
+        var beginT = new Array();  
+        beginT = beginTime.split(" ");  
+        beginT = beginT[1].split(":");  
+        var sh = Number(beginT[0]);  
+        var sm = Number(beginT[1]);  
+        var ss = Number(beginT[2]);  
+        //换算历时 h:m:s  
+        var allS = (nh*3600+nm*60+ns)-(sh*3600+ sm*60 +ss);  
+        var dh = parseInt(allS/3600);  
+        var dm = parseInt((allS-dh*3600)/60);  
+        var ds = allS - dh*3600 - dm*60;  
+        document.getElementById('duration').value = dh+':'+dm+':'+ds;  
+    }  
+      
+</script>  
+    </body>
+</html>
