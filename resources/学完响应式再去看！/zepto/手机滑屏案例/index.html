@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" name="viewport" />
+<style>
+*{ margin: 0;padding: 0;list-style: none;}
+html,body{ overflow:hidden;}
+html,body,.all,.all>div{width:100%; height:100%;}
+
+
+.all{ -webkit-transform:translateY(0); -webkit-transition:all 0.5s;}
+
+</style>
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script type="text/javascript" src="js/touch.js"></script>
+<script type="text/javascript">
+
+$(function() {
+        
+	var colors =  ['orange','green','red','yellow','blue']
+	$('.all>div').each(function(index, element) {
+        $(element).css('background',colors[index])
+    });	
+	
+	
+	var num=0;
+	$(window).swipeUp(function(){
+		num++
+		if(num>4){num=4}
+		$('.all').css('-webkit-transform','translateY(-'+num+'00%)')
+	}).swipeDown(function(){
+		num--
+		if(num<0){num=0}
+		$('.all').css('-webkit-transform','translateY(-'+num+'00%)')
+	})      
+	
+	$('span').tap(function(){
+		alert(123)	
+	})
+
+	/*阻止移动浏览器默认设置的阻止滑动*/
+	document.addEventListener('touchmove', function (event) {
+		event.preventDefault();
+	}, false);
+});
+      
+</script>
+</head>
+
+<body>
+<section class="all">
+	<div class="page1">
+    	<span class="sp01">点我，click1111111</span><br><br>
+		<span class="sp02">点我，tap</span>
+    </div>
+	<div class="page2">2</div>
+	<div class="page3">3</div>
+	<div class="page4">4</div>
+	<div class="page5">5</div>
+</section>
+</body>
+</html>

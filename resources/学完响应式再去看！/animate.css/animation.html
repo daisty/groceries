@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>测试</title>
+   	<link rel="stylesheet" href="animate.css">
+    <style type="text/css">
+    	*{padding:0;margin:0; }
+		button{ cursor:pointer; margin:0 5px;}
+		.t{height:600px; width:100%;}
+		.tl{height:600px; width:50%;float:left; }
+		.tl div{ margin:20px 0;}
+		.tr{ height:600px; width:50%;float:right; }
+		.imp{ font-size:60px; font-weight:bold; font-family:"微软雅黑"; margin-top:200px; text-align:center; width:100%; height:600px; overflow:hidden; }
+    </style>
+    <script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+    <script type="text/javascript">
+	$(function(){
+		
+		$('.txt').blur(function(){
+			
+			var self = $(this)
+			if(!self.val()){
+				$('.imp div').html('高质量动画')
+			}else{
+				//alert(self.val())
+				$('.imp div').html(self.val())	
+			}	
+		})
+		
+		$('.tl button').click(function(e) {
+			var selftx = $(this).html()
+			document.title = selftx;
+            $('.imp div').attr('class','').addClass('animated '+selftx)
+			
+        });
+		$('.tr button').click(function(e) {
+			//var itsclass = $('.imp div').attr('class')
+			//alert(itsclass)
+			//$('.imp div').attr('class','').addClass(itsclass+' infinite')
+			//alert($('.imp div').attr('class'))
+           $('.imp div').addClass('infinite')
+        });
+		
+	})
+	</script>
+</head>
+<body>
+<div class="t">
+	<div class="tl">
+        <div>
+        <button>bounce</button><button>flash</button><button>pulse</button><button>rubberBand</button><button>shake</button><button>swing</button><button>tada</button><button>wobble</button>
+        </div>
+        <div>
+        <button>bounceIn</button><button>bounceInDown</button><button>bounceInLeft</button><button>bounceInRight</button><button>bounceInUp</button>
+        </div>
+        <div>
+        <button>bounceOut</button><button>bounceOutDown</button><button>bounceOutLeft</button><button>bounceOutRight</button><button>bounceOutUp</button>
+        </div>
+        <div>
+        <button>fadeIn</button><button>fadeInDown</button><button>fadeInDownBig</button><button>fadeInLeft</button><button>fadeInLeftBig</button><button>fadeInRight</button><button>fadeInRightBig</button><button>fadeInUp</button><button>fadeInUpBig</button>
+        </div>
+        <div>
+        <button>fadeOut</button><button>fadeOutDown</button><button>fadeOutDownBig</button><button>fadeOutLeft</button><button>fadeOutLeftBig</button><button>fadeOutRight</button><button>fadeOutRightBig</button><button>fadeOutUp</button><button>fadeOutUpBig</button>
+        </div>
+        <div>
+        <button>flip</button><button>flipInX</button><button>flipInY</button><button>flipOutX</button><button>flipOutY</button>
+        </div>
+        <div>
+        <button>lightSpeedIn</button><button>lightSpeedOut</button>
+        </div>
+        <div>
+        <button>rotateIn</button><button>rotateInDownLeft</button><button>rotateInDownRight</button><button>rotateInUpLeft</button><button>rotateInUpRight</button>
+        </div>
+        <div>
+        <button>rotateOut</button><button>rotateOutDownLeft</button><button>rotateOutDownRight</button><button>rotateOutUpLeft</button><button>rotateOutUpRight</button>
+        </div>
+        <div>
+        <button>hinge</button><button>rollIn</button><button>rollOut</button>
+        </div>
+        <div>
+        <button>zoomIn</button><button>zoomInDown</button><button>zoomInLeft</button><button>zoomInRight</button><button>zoomInUp</button>
+        </div>
+        <div>
+        <button>zoomOut</button><button>zoomOutDown</button><button>zoomOutLeft</button><button>zoomOutRight</button><button>zoomOutUp</button>
+        </div>
+	</div>
+    <div class="tr">
+    	请输入您要的文字：<input type="text" class="txt"><button>循环</button>
+        <div class="imp "><div class="animated">高质量动画</div></div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

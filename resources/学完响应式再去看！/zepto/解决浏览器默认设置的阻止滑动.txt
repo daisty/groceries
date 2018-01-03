@@ -1,0 +1,4 @@
+/*解决浏览器默认设置的阻止滑动*/
+document.addEventListener('touchmove', function (event) {
+	event.preventDefault();
+}, false);

@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="jquery.mobile-1.3.2/jquery.mobile-1.3.2.min.css">
+
+<script src="jquery-1.7.2.min.js"></script>
+<script src="jquery.mobile-1.3.2/jquery.mobile-1.3.2.min.js"></script>
+<style>
+.mygrid .ui-block-a, 
+.mygrid .ui-block-b, 
+.mygrid .ui-block-c 
+{
+background-color: lightgray;
+border: 1px solid black;
+height: 100px;
+font-weight: bold;
+text-align: center;
+padding: 30px;
+}
+
+
+.myindexcon{ padding:0;}
+</style>
+</head>
+
+<body>
+<div data-role="page" id="one"> 
+	<div data-role="header" data-theme="b" data-position="fixed">
+    	<h1>我的首页</h1>
+    </div>
+    <div data-role="content" class="myindexcon">
+    	<a href="#two" data-transition="">点我!!!!</a><br><br>
+		<div class="ui-grid-b mygrid">
+          <div class="ui-block-a"><span>Some Text</span></div>
+          <div class="ui-block-b"><span>Some Text</span></div>
+          <div class="ui-block-c"><span>Some Text</span></div>
+        </div>
+    </div>
+    <div data-role="footer" data-theme="b" data-position="fixed">
+    	<div data-role="navbar">
+          <ul>
+            <li><a href="#" data-icon="home">主页Home</a></li>
+            <li><a href="#" data-icon="arrow-r">第二页</a></li>
+            <li><a href="#" data-icon="search">搜索</a></li>
+          </ul>
+        </div>
+    </div>
+</div>
+
+<div data-role="page" id="two">
+<div data-role="header" data-theme="b" data-position="fixed">
+    	<h1>这是第二页的头部</h1>
+    </div>
+    <div data-role="content">
+    	<a href="#one" data-transition="">点我可以回到第一页哦！</a>
+
+       
+    </div>
+    <div data-role="footer" data-theme="b" data-position="fixed">
+    	<h2>此处是页脚文本</h2>
+    </div>
+</div>
+
+
+</body>
+</html>

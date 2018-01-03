@@ -1,0 +1,17 @@
+虽然jquery 包非常的小，但是在移动端里面看来，还是大了。
+有些手机，是加载不进 jquery 包的。
+这时候，我们会使用zepto.js 这个文件包。
+它为什么小，因为这个zepto.js文件 只适应于移动端。 它省略了兼容的问题。 也就说他是简化版的jquery。
+但是你无需担心。因为他里面的语法，就是jquery 里面的语法。
+
+
+
+1.不要用 click 事件，用 tap 代替
+
+2.:first 等在 jQuery 里面很常用的过滤选择器，Zepto 不支持
+
+3.首先 Zepto 没有 .innerHeight() .outerWidth() 等四个方法，其次，它的 .height()/.width() 方法也不完善，对于 display:none 的元素，计算出的高宽都是 0
+
+4.用 .fadeIn() 方法来替代 .show()
+
+5. 上滑动和下滑动使用的时候需要注意。

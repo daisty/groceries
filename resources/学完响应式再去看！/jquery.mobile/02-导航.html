@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="jquery.mobile-1.3.2/jquery.mobile-1.3.2.min.css">
+
+<script src="jquery-1.7.2.min.js"></script>
+<script src="jquery.mobile-1.3.2/jquery.mobile-1.3.2.min.js"></script>
+
+</head>
+
+<body>
+<div data-role="page" id="one"> 
+	<div data-role="header" data-theme="b" data-position="fixed">
+    	<h1>我的首页</h1>
+    </div>
+    <div data-role="content">
+    	<a href="#two" data-transition="">这是首页</a><br><br>
+<br>
+<br>
+<br>
+
+        <a href="ceshi.html" data-rel="dialog" >!!!!!外部跳转</a>
+    </div>
+    <div data-role="footer" data-theme="b" data-position="fixed">
+    	<div data-role="navbar">
+          <ul>
+            <li><a href="#" data-icon="home" class="ui-state-persist">主页Home</a></li>
+            <li><a href="#" data-icon="arrow-r"  class="ui-state-persist">第二页</a></li>
+          </ul>
+        </div>
+    </div>
+</div>
+
+<div data-role="page" id="two">
+<div data-role="header" data-theme="b" data-position="fixed">
+    	<h1>这是第二页的头部</h1>
+    </div>
+    <div data-role="content">
+    	<a href="#one" data-transition="">点我可以回到第一页哦！</a>
+
+       
+    </div>
+    <div data-role="footer" data-theme="b" data-position="fixed">
+    	<div data-role="navbar">
+          <ul>
+            <li><a href="#one" data-icon="home">主页Home</a></li>
+            <li><a href="#" data-icon="arrow-r" class="ui-state-persist">第二页</a></li>
+          </ul>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

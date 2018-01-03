@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>解决在IE6浏览器里PNG图像背景透明方法</title>
+<style type="text/css">
+body{background:url(bg.jpg) no-repeat center top;}
+ul,li,h1{margin:0;padding:0;list-style:none;}
+a:link,a:visited{color:#666;text-decoration:none;}
+a:hover{color:#069;text-decoration:underline;}
+ul{background:url(nav_bg.png) no-repeat;width:800px;height:50px;line-height:50px;margin:20px auto 80px;} 
+ul li{float:left;font-weight:bold;width:100px;text-align:center;}
+h1{width:800px;text-align:center;margin:0 auto;font-size:16px;color:#fff;}
+</style>
+<script src="iepng.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+   EvPNG.fix('div,ul,img,li,input,span,b,h1,h2,h3,h4');
+</script>
+
+</head>
+<body>
+	<h1>这里是背景图像</h1>
+    <ul>
+    	<li><a href="#">首页</a></li>
+        <li><a href="#">公司简介</a></li>
+        <li><a href="#">产品介绍</a></li>
+        <li><a href="#">如何购买</a></li>
+        <li><a href="#">节能环保</a></li>
+        <li><a href="#">下载与服务</a></li>
+        <li><a href="#">联系我们</a></li>
+        <li><a href="#">在线帮助</a></li>
+    </ul>
+    <h1>这是插入的图片<br /><br /><img src="nav_bg.png" width="800" height="50" /></h1>
+</body>
+</html>

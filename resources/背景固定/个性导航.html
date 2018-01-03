@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+*{padding:0;margin:0;list-style:none;}
+ol{ border-bottom:1px solid #000; width:102px; position:fixed; left:100px; }
+li{ font-size:30px; text-align:center; line-height:100px;}
+ol li{width:100px;height:100px;background:#ccc; border:1px solid #000; border-bottom:0; cursor:pointer;}
+ol li.cur{ background:#0F0;}
+html{ height:100%;}
+body{ height:100%;}
+ul{height:100%; }
+ul li{width:100%;height:100%;background:#09C; }
+</style>
+<script type="text/javascript" src="script/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	
+	var colors = ['pink','red','gold','blue','green']
+	
+	$('ul li').each(function(index, element) {
+        $(element).css({'background-color':colors[index]})
+    });
+	
+	$('ol li').click(function(e) {
+        $(this).addClass('cur').siblings().removeClass('cur')
+		
+		var selfIndex = $(this).index()
+		var winH = $(window).height() 
+		
+		$('html,body').stop().animate({scrollTop:selfIndex*winH},500)
+    });
+})
+</script>
+</head>
+
+<body>
+<ol>
+	<li class="cur">首页</li>
+	<li>关注</li>
+	<li>动态</li>
+	<li>风格</li>
+	<li>作品</li>
+</ol>
+<ul>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+</ul>
+</body>
+</html>
